@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-cursos',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CursosComponent {
   nomeDoPortal: string;
+  cursos: string[] = ["Angular", "C#/.NET", "java"];
   constructor() {
-    this.nomeDoPortal = "https://github.com/fabricioaugus";
+    this.nomeDoPortal = "https://loiane.training/continuar-curso/angular";
+
+
+    this.cursos.forEach(curso => {
+      curso;
+    });
   }
 }
