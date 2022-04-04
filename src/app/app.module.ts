@@ -1,22 +1,22 @@
-import { NgModule } from '@angular/core';
+import { NgModule,Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { CursosComponent } from "./cursos/CursosComponent";
 import { AppComponent } from './app.component';
-import { CursosModule } from './cursos/cursos.module';
 import { PrimeiroComponentComponent } from './primeiro-component/primeiro-component.component';
+import { DataBindingComponent } from './data-binding/data-binding.component';
 @NgModule({
-  declarations: [
-    AppComponent,
-    PrimeiroComponentComponent,
-    
-  ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    CursosModule
+    FormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    CursosComponent,
+    PrimeiroComponentComponent,
+    DataBindingComponent
+  ],
+  bootstrap:[AppComponent]
 })
+
 export class AppModule { }

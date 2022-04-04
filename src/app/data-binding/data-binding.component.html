@@ -1,0 +1,53 @@
+<!-- <section>
+    <article>
+        <h3>interpolacao</h3>
+        <p>String renderizada com interpolacao: {{ url }}</p>
+        <p>A funcao returna o valor que é {{getValor()}}</p>
+    </article>
+    <article>
+        <h3>Imagens Property Binding</h3>
+        <img [src]="urlImagem">
+        <img src={{urlImagem}}> 
+    </article>
+</section>
+-->
+<article>
+    <h3>class e Style binding </h3>
+    <div>
+        <select #classe (change)="0">
+            <option value="alert-success">Sucesso</option>
+            <option value="alert-info">Informação</option>
+            <option value="alert-danger">Erro</option>
+            <option value="alert-warning">Alerta</option>
+        </select>
+        <br><br>
+        <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success' ">
+            Sucesso
+        </div>
+        <div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info' ">
+            Informação
+        </div>
+        <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger' ">
+            Erro
+        </div>
+        <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning' ">
+            Atenção
+        </div>
+        <div class="alert alert-danger" role="alert" [style.display]=" classe.value =='alert-danger'? 'block': 'none'">
+            <P>Aparece em caso de erro </P>
+        </div>
+        <button class="btn btn-primary" (click)="botaoClicado()" type="button">
+            Click no Botão PF !!
+        </button>
+
+    </div>
+    <br><br>
+    <div>
+
+        <input type="text" (keyup)="onKeyUp($event)" (keyup.enter)="salvarValor(campoInput.value)"
+            (blur)="salvarValor(campoInput.value)" #campoInput />
+
+        <p>Valor atual: {{ valorAtual }}</p>
+        <p>Valor salvo: {{ valorSalvo }}</p>
+    </div>
+</article>
