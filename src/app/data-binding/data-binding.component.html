@@ -50,4 +50,11 @@
         <p>Valor atual: {{ valorAtual }}</p>
         <p>Valor salvo: {{ valorSalvo }}</p>
     </div>
+    <span
+    (mouseover)="onMouseOverOut()"
+    (mouseout)="onMouseOverOut()"
+    [class.highlight]="isMouseOver"
+    >
+     Passe o mouse sobre mim
+  </span>
 </article>
