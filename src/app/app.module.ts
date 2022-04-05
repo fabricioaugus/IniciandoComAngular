@@ -1,20 +1,28 @@
-import { NgModule,Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { CursosComponent } from "./cursos/CursosComponent";
 import { AppComponent } from './app.component';
-import { PrimeiroComponentComponent } from './primeiro-component/primeiro-component.component';
-import { DataBindingComponent } from './data-binding/data-binding.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from './components/template/header/header.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { FooterComponent } from './components/template/footer/footer.component';
+import { NavComponent } from './components/template/nav/nav.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule
   ],
   declarations: [
     AppComponent,
-    CursosComponent,
-    PrimeiroComponentComponent,
-    DataBindingComponent
+    HeaderComponent,
+    FooterComponent,
+    NavComponent
   ],
   bootstrap:[AppComponent]
 })

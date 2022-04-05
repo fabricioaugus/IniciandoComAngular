@@ -1,0 +1,16 @@
+
+
+.container{
+    margin: 0;
+}
+.sidenav {
+    background-color: grey;
+    width: 200px;
+}
+.sidenav a {
+    color: azure;
+}
+.sidenav i{
+    padding-right: 10px;
+}
+
