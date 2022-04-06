@@ -13,6 +13,8 @@ import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './views/home/home.component';
 import { ProductsCrudComponent } from './views/products-crud/products-crud.component';
 import { AppRoutingModule } from './app-routing.module';
+import { RedDirective } from './directives/red.directive';
+import { ProductsCreatComponent } from './components/product/products-creat/products-creat.component';
 
 @NgModule({
   imports: [
@@ -31,7 +33,9 @@ import { AppRoutingModule } from './app-routing.module';
     FooterComponent,
     NavComponent,
     HomeComponent,
-    ProductsCrudComponent
+    ProductsCrudComponent,
+    RedDirective,
+    ProductsCreatComponent
   ],
   bootstrap: [AppComponent]
 })
