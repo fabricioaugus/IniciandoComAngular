@@ -1,6 +1,3 @@
-.container{
-    margin:0;
-}
 .sidenav {
     background-color: grey;
     width: 200px;
@@ -11,7 +8,5 @@
 .sidenav i{
     padding-right: 10px;
 }
-.content{
-    padding: 16px;
-}
+
 

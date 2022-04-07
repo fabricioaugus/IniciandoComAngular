@@ -1,0 +1,14 @@
+<h1>Tela para Alterar produtos: </h1>
+<mat-card>
+    <mat-card-title>Alterar Produtos</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Preço (R$)">
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="updateProduct()" class="btn btn-warning">Alterar</button>
+    <button mat-raised-button (click)="concel()" class="btn btn-danger">Cancelar</button>
+</mat-card>

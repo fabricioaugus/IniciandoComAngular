@@ -8,5 +8,6 @@ export class RedDirective {
   constructor(private el: ElementRef) {
     el.nativeElement.style.color ="rgb(223, 14, 14)";
    }
+   
 
 }

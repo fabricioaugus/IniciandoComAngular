@@ -1,1 +1,14 @@
-<p>products-creat works!</p>
+<h1>Tela para Cadastrar produtos: </h1>
+<mat-card>
+    <mat-card-title>Novo Produtos</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]= "product.name" name="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Preço (R$)"[(ngModel)]= "product.price" name="price">
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="createProduct()" class="btn btn-success">Salvar</button>
+    <button mat-raised-button (click)="concel()" class="btn btn-danger">Cancelar</button>
+</mat-card>
