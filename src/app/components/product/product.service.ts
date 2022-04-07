@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { tick } from '@angular/core/testing';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { map, take } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 import { Product } from './product.model';
 
@@ -10,37 +12,41 @@ import { Product } from './product.model';
 export class ProductService {
   urlBase = "http://localhost:3001/products";
 
-  constructor(private snackBar:MatSnackBar, private httpClient: HttpClient) {
+  constructor(private snackBar: MatSnackBar, private httpClient: HttpClient) {
 
-   }
-   showMessage(msg: string): void{
-     this.snackBar.open(msg, 'X',{
-       duration:3000,
-       horizontalPosition:"right",
-       verticalPosition:"top"
-     });
+  }
+  showMessage(msg: string): void {
+    this.snackBar.open(msg, 'X', {
+      duration: 3000,
+      horizontalPosition: "right",
+      verticalPosition: "top"
+    });
 
-   }
-   create(product:Product): Observable<Product>{
-      return this.httpClient.post<Product>(this.urlBase, product);     
+  }
+  create(product: Product): Observable<Product> {
+    return this.httpClient.post<Product>(this.urlBase, product);
 
-   }
-   read():Observable<Product[]>{
+  }
+  read(): Observable<Product[]> {
     return this.httpClient.get<Product[]>(this.urlBase);
-   }
-   readById(id: string | null):Observable<Product>{
-    const url =`${this.urlBase}/${id}`;
-     return this.httpClient.get<Product>(url);
+  }
+  readById(id: string | null): Observable<Product> {
+    const url = `${this.urlBase}/${id}`;
+    return this.httpClient.get<Product>(url);
 
-   }
+  }
+
+   /* 
    update(product:Product): Observable<Product> {
-    const url =`${this.urlBase}/${product.id}`;
-     return this.httpClient.put<Product>(url, product);
-   }
-   
-   delete(id:string):Observable<Product>{
-    const url =`${this.urlBase}/${id}`;
-    return this.httpClient.delete<Product>(url);
+   const url =`${this.urlBase}/${product.id}`;
+    return this.httpClient.put<Product>(url, product).pipe(
+      map(product => product)
+    )
+  }
+  */
 
+  delete(id: number) {
+    const url = `${this.urlBase}/${id}`;
+    return this.httpClient.delete(url).pipe(take(1))
   }
 }
